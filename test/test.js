@@ -1,9 +1,9 @@
 "@fixture fixture";
-"@page http://localhost:3002/";
+"@page https://ulrikstrid.github.io/testcafe-text-input-repro/";
 
 "@test"["Try type"] = {
   "1.Type": function() {
-    act.type("#minMlInput", "26", { replace: true });
+    act.type("#min-liquid-input", "26", { replace: true });
   },
 
   "2.Check text": function() {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
-import TextField from "./text-field";
+import TextField from "material-ui/TextField";
 import "./App.css";
 
 class App extends Component {
@@ -9,7 +9,8 @@ class App extends Component {
   };
 
   handleMinLiquidInput = event => {
-    this.setState({ minLiquid: event.target.value });
+    console.log(event);
+    this.setState({ minLiquid: event.currentTarget.value });
   };
 
   render() {
@@ -20,7 +21,9 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <TextField
-          onInputChange={this.handleMinLiquidInput}
+          name="minLiquid"
+          id="min-liquid-input"
+          onInput={this.handleMinLiquidInput}
           value={this.state.minLiquid}
         />
         <p className="min-liquid">{this.state.minLiquid}</p>
