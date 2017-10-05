@@ -9,7 +9,7 @@ class App extends Component {
   };
 
   handleMinLiquidInput = event => {
-    console.log(event);
+    console.log(event.currentTarget.value);
     this.setState({ minLiquid: event.currentTarget.value });
   };
 
@@ -23,6 +23,12 @@ class App extends Component {
         <TextField
           name="minLiquid"
           id="min-liquid-input"
+          floatingLabelText="Min (ml)"
+          floatingLabelFixed
+          type="number"
+          min={0}
+          step="0.1"
+          inputStyle={{ fontWeight: 500 }}
           onInput={this.handleMinLiquidInput}
           value={this.state.minLiquid}
         />
